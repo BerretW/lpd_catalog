@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
 
-from database import SessionLocal
+from backend.database import SessionLocal
 from schemas.user import User, UserCreate
 from crud import user as user_crud
 from auth import create_access_token, get_current_user, require_roles

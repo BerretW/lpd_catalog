@@ -2,7 +2,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import user, organization, device, object, note, battery, battery_type, device_type, power_source, power_source_type
+from backend.routers import user, organization, device, object, note, battery, battery_type, device_type, power_source, power_source_type
 
 app = FastAPI(title="Security Device API")
 

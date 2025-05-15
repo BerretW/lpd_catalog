@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from database import SessionLocal
+from backend.database import SessionLocal
 from schemas.device import Device, DeviceCreate
 from crud import device as dev_crud
 from auth import get_current_user

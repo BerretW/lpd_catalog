@@ -1,4 +1,3 @@
-# auth.py
 from datetime import datetime, timedelta
 from typing import Optional
 from fastapi import Depends, HTTPException, status
@@ -6,17 +5,18 @@ from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from sqlalchemy.orm import Session
 from backend.config import load_config
-from database import SessionLocal
+from backend.database import SessionLocal
 from models.user import User
 from crud.user import get_user_by_username
 
-# Tajný klíč a JWT konfigurace
+# Načti konfiguraci
 config = load_config()
 SECRET_KEY = config["auth"]["secret_key"]
 ALGORITHM = config["auth"]["algorithm"]
 ACCESS_TOKEN_EXPIRE_MINUTES = config["auth"]["expire_minutes"]
 
-oauth2_scheme = tokenUrl="/login"
+# Tady byla chyba
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()

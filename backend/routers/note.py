@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from database import SessionLocal
+from backend.database import SessionLocal
 from schemas.note import Note, NoteCreate
 from crud import note as note_crud
 from auth import get_current_user

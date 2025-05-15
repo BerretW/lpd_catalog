@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from database import SessionLocal
+from backend.database import SessionLocal
 from schemas.organization import Organization, OrganizationCreate
 from crud import organization as org_crud
 from auth import get_current_user

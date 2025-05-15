@@ -1,6 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
-from database import SessionLocal
+from backend.database import SessionLocal
 from schemas.battery_type import BatteryType, BatteryTypeCreate
 from crud import battery_type as battype_crud
 from auth import get_current_user, require_roles
