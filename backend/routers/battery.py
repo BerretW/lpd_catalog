@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from backend.database import SessionLocal
 from backend.schemas.battery import Battery, BatteryCreate
 from backend.crud import battery as bat_crud
-from auth import get_current_user
+from backend.auth import get_current_user
 router = APIRouter()
 
 def get_db():

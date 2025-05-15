@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from backend.database import SessionLocal
 from backend.schemas.note import Note, NoteCreate
 from backend.crud import note as note_crud
-from auth import get_current_user
+from backend.auth import get_current_user
 router = APIRouter()
 
 def get_db():
