@@ -55,3 +55,12 @@ def require_roles(*roles: str):
             raise HTTPException(status_code=403, detail="Přístup odepřen")
         return user
     return wrapper
+def create_reset_token(username: str):
+    return create_access_token({"sub": username}, expires_delta=timedelta(minutes=30))
+
+def verify_reset_token(token: str) -> Optional[str]:
+    try:
+        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        return payload.get("sub")
+    except JWTError:
+        return None
