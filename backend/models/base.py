@@ -1,2 +1,2 @@
 # models/base.py
-from database import Base
+from backend.database import Base

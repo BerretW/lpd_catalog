@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from backend.database import SessionLocal
-from schemas.power_source import PowerSource, PowerSourceCreate
-from crud import power_source as ps_crud
+from backend.schemas.power_source import PowerSource, PowerSourceCreate
+from backend.crud import power_source as ps_crud
 from auth import get_current_user
 router = APIRouter()
 

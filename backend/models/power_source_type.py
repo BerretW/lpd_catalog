@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Text
-from database import Base
+from backend.database import Base
 
 class PowerSourceType(Base):
     __tablename__ = "power_source_types"

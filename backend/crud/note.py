@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models.note import Note
-from schemas.note import NoteCreate
+from backend.models.note import Note
+from backend.schemas.note import NoteCreate
 
 def create_note(db: Session, note: NoteCreate):
     db_note = Note(**note.dict())

@@ -6,8 +6,8 @@ from jose import JWTError, jwt
 from sqlalchemy.orm import Session
 from backend.config import load_config
 from backend.database import SessionLocal
-from models.user import User
-from crud.user import get_user_by_username
+from backend.models.user import User
+from backend.crud.user import get_user_by_username
 
 # Načti konfiguraci
 config = load_config()

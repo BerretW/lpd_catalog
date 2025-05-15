@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models.power_source_type import PowerSourceType
-from schemas.power_source_type import PowerSourceTypeCreate
+from backend.models.power_source_type import PowerSourceType
+from backend.schemas.power_source_type import PowerSourceTypeCreate
 
 def create_power_source_type(db: Session, ptype: PowerSourceTypeCreate):
     db_type = PowerSourceType(**ptype.dict())

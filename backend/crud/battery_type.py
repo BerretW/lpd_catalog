@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models.battery_type import BatteryType
-from schemas.battery_type import BatteryTypeCreate
+from backend.models.battery_type import BatteryType
+from backend.schemas.battery_type import BatteryTypeCreate
 
 def create_battery_type(db: Session, btype: BatteryTypeCreate):
     db_type = BatteryType(**btype.dict())

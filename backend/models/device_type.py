@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Text
-from database import Base
+from backend.database import Base
 
 class DeviceType(Base):
     __tablename__ = "device_types"

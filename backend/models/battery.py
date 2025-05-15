@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, ForeignKey, Date, String, Text
 from sqlalchemy.orm import relationship
-from database import Base
+from backend.database import Base
 
 class Battery(Base):
     __tablename__ = "batteries"

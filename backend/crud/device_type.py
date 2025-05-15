@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models.device_type import DeviceType
-from schemas.device_type import DeviceTypeCreate
+from backend.models.device_type import DeviceType
+from backend.schemas.device_type import DeviceTypeCreate
 
 def create_device_type(db: Session, dev: DeviceTypeCreate):
     db_dev = DeviceType(**dev.dict())

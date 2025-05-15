@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models.object import Object
-from schemas.object import ObjectCreate
+from backend.models.object import Object
+from backend.schemas.object import ObjectCreate
 
 def create_object(db: Session, obj: ObjectCreate):
     db_obj = Object(**obj.dict())

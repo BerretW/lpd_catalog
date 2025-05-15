@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models.battery import Battery
-from schemas.battery import BatteryCreate
+from backend.models.battery import Battery
+from backend.schemas.battery import BatteryCreate
 
 def create_battery(db: Session, bat: BatteryCreate):
     db_bat = Battery(**bat.dict())

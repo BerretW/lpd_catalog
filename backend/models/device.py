@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, Text, ForeignKey, Date
 from sqlalchemy.orm import relationship
-from database import Base
+from backend.database import Base
 
 class Device(Base):
     __tablename__ = "devices"

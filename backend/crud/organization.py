@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models.organization import Organization
-from schemas.organization import OrganizationCreate
+from backend.models.organization import Organization
+from backend.schemas.organization import OrganizationCreate
 
 def create_organization(db: Session, org: OrganizationCreate):
     db_org = Organization(**org.dict())

@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models.device import Device
-from schemas.device import DeviceCreate
+from backend.models.device import Device
+from backend.schemas.device import DeviceCreate
 
 def create_device(db: Session, dev: DeviceCreate):
     db_dev = Device(**dev.dict())

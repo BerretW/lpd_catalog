@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional
 from datetime import date
-from schemas.enums import StatusEnum
+from backend.schemas.enums import StatusEnum
 status: Optional[StatusEnum] = StatusEnum.OK
 
 class DeviceBase(BaseModel):

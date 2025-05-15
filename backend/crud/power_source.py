@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from models.power_source import PowerSource
-from schemas.power_source import PowerSourceCreate
+from backend.models.power_source import PowerSource
+from backend.schemas.power_source import PowerSourceCreate
 
 def create_power_source(db: Session, ps: PowerSourceCreate):
     db_ps = PowerSource(**ps.dict())

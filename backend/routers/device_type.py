@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from backend.database import SessionLocal
-from schemas.device_type import DeviceType, DeviceTypeCreate
-from crud import device_type as devtype_crud
+from backend.schemas.device_type import DeviceType, DeviceTypeCreate
+from backend.crud import device_type as devtype_crud
 from auth import get_current_user, require_roles
 router = APIRouter()
 
