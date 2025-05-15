@@ -17,7 +17,12 @@ def load_config():
                     "port": 3306,
                     "database": "security_db"
                 }
-            }
+            },
+            "auth": {
+            "secret_key": "tajny-5klic-4567",
+            "algorithm": "HS256",
+            "expire_minutes": 60
+            },
         }
         with open(CONFIG_FILE, "w") as f:
             json.dump(default_config, f, indent=4)

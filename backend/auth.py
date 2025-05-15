@@ -5,16 +5,18 @@ from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWTError, jwt
 from sqlalchemy.orm import Session
+from backend.config import load_config
 from database import SessionLocal
 from models.user import User
 from crud.user import get_user_by_username
 
 # Tajný klíč a JWT konfigurace
-SECRET_KEY = "tajny-klic-123"
-ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60
+config = load_config()
+SECRET_KEY = config["auth"]["secret_key"]
+ALGORITHM = config["auth"]["algorithm"]
+ACCESS_TOKEN_EXPIRE_MINUTES = config["auth"]["expire_minutes"]
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
+oauth2_scheme = tokenUrl="/login"
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     to_encode = data.copy()
@@ -47,9 +49,9 @@ def get_current_user(token: str = Depends(oauth2_scheme), db: Session = Depends(
         raise credentials_exception
     return user
 
-def require_role(required_role: str):
+def require_roles(*roles: str):
     def wrapper(user: User = Depends(get_current_user)):
-        if user.role != required_role:
+        if user.role not in roles:
             raise HTTPException(status_code=403, detail="Přístup odepřen")
         return user
     return wrapper
